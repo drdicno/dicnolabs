@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mortgage Calculator | Dicno Labs</title>
+    <meta
+      name="description"
+      content="Free mortgage calculator by Dicno Labs. Estimate principal and interest, taxes, insurance, PMI, HOA, and total monthly payment."
+    />
+    <meta name="theme-color" content="#131922" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://dicnolabs.com/tools/mortgage-calculator/" />
+    <meta property="og:title" content="Free Mortgage Calculator | Dicno Labs" />
+    <meta
+      property="og:description"
+      content="Estimate your monthly mortgage payment with principal, interest, taxes, insurance, PMI, and HOA."
+    />
+    <meta property="og:image" content="https://dicnolabs.com/assets/header.png" />
+    <link rel="icon" type="image/png" href="/assets/logo.png" />
+    <link rel="apple-touch-icon" href="/assets/logo.png" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="/"><img src="/assets/logo.png" alt="Dicno Labs logo" width="44" height="44" /><span>Dicno Labs</span></a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle><span></span><span></span></button>
+      <nav class="site-nav" data-nav>
+        <a href="/">Home</a><a href="/apps/">Apps</a><a href="/tools/">Tools</a><a href="/learn/">Learn</a><a href="/blog/">Blog</a><a href="/developer/">Developer</a><a href="/privacy-policy/">Privacy Policy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero page-hero">
+        <div class="hero-bg" aria-hidden="true"></div><div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Free tool</p>
+          <h1>Mortgage Calculator</h1>
+          <p class="hero-copy">
+            Estimate a monthly mortgage payment with principal and interest, property taxes, home insurance, PMI,
+            and HOA dues. Adjust the inputs to understand how each assumption changes the payment.
+          </p>
+        </div>
+      </section>
+
+      <section class="content-page calculator-page">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/tools/">Tools</a>
+          <span>/</span>
+          <span>Mortgage Calculator</span>
+        </nav>
+
+        <a class="back-link" href="/tools/">Back to Tools</a>
+
+        <section class="content-panel intro-panel" aria-labelledby="intro-title">
+          <p class="eyebrow">Mortgage payment estimate</p>
+          <h2 id="intro-title">Plan your monthly home payment before you compare loan options.</h2>
+          <p>
+            This free mortgage calculator helps estimate the monthly cost of a home loan using the home price,
+            down payment, interest rate, and loan term. It is built for quick planning when you want to understand
+            the core payment before talking with a lender.
+          </p>
+          <p>
+            In addition to principal and interest, the calculator includes estimated property taxes, home insurance,
+            optional PMI, and optional HOA dues. Seeing these line items together can make the full monthly housing
+            cost easier to understand.
+          </p>
+          <p>
+            Use the payment breakdown to compare different home prices, down payments, interest rates, or loan terms
+            and see how each assumption affects affordability.
+          </p>
+        </section>
+
+        <article class="content-panel calculator-panel" aria-labelledby="calculator-title">
+          <div>
+            <p class="eyebrow">Calculator</p>
+            <h2 id="calculator-title">Estimate your monthly mortgage payment.</h2>
+            <p>
+              This free calculator is designed for quick planning. It uses the standard fixed-rate mortgage formula
+              for principal and interest, then adds estimated monthly taxes, insurance, PMI, and HOA dues.
+            </p>
+          </div>
+
+          <form class="calculator-form" data-mortgage-calculator>
+            <label>
+              <span>Home Price</span>
+              <input type="number" name="homePrice" min="0" step="1000" value="400000" required />
+            </label>
+            <label>
+              <span>Down Payment</span>
+              <input type="number" name="downPayment" min="0" step="1000" value="80000" required />
+            </label>
+            <label>
+              <span>Interest Rate (%)</span>
+              <input type="number" name="interestRate" min="0" step="0.01" value="6.5" required />
+            </label>
+            <label>
+              <span>Loan Term (years)</span>
+              <input type="number" name="loanTerm" min="1" step="1" value="30" required />
+            </label>
+            <label>
+              <span>Property Tax yearly</span>
+              <input type="number" name="propertyTax" min="0" step="100" value="4800" />
+            </label>
+            <label>
+              <span>Home Insurance yearly</span>
+              <input type="number" name="homeInsurance" min="0" step="100" value="1200" />
+            </label>
+            <label>
+              <span>PMI monthly optional</span>
+              <input type="number" name="pmi" min="0" step="10" value="0" />
+            </label>
+            <label>
+              <span>HOA monthly optional</span>
+              <input type="number" name="hoa" min="0" step="10" value="0" />
+            </label>
+          </form>
+
+          <div class="calculator-results" aria-live="polite">
+            <div class="total-payment">
+              <span>Estimated Monthly Payment</span>
+              <strong data-result="total">$0</strong>
+            </div>
+            <div class="breakdown-grid">
+              <div><span>Principal &amp; Interest</span><strong data-result="principalInterest">$0</strong></div>
+              <div><span>Estimated Taxes</span><strong data-result="taxes">$0</strong></div>
+              <div><span>Estimated Insurance</span><strong data-result="insurance">$0</strong></div>
+              <div><span>PMI</span><strong data-result="pmi">$0</strong></div>
+              <div><span>HOA</span><strong data-result="hoa">$0</strong></div>
+            </div>
+            <p class="calculator-disclaimer">
+              This calculator is for estimation only and does not include all lender fees or closing costs.
+            </p>
+          </div>
+        </article>
+
+        <article class="content-panel article-panel" aria-labelledby="article-title">
+          <p class="eyebrow">Mortgage guide</p>
+          <h2 id="article-title">How to Calculate Your Monthly Mortgage Payment</h2>
+
+          <h3>What is a mortgage payment?</h3>
+          <p>
+            A mortgage payment is the recurring amount a homeowner pays toward a home loan. The core payment usually
+            includes principal, which reduces the loan balance, and interest, which is the cost of borrowing money.
+            Many homeowners also pay property taxes and insurance through the monthly payment when those costs are
+            held in escrow.
+          </p>
+
+          <h3>What does PITI mean?</h3>
+          <p>
+            PITI stands for principal, interest, taxes, and insurance. Principal and interest are tied directly to
+            the loan. Taxes and insurance are housing costs that often change over time. A full mortgage estimate may
+            also include PMI, HOA dues, and other recurring expenses.
+          </p>
+          <p>
+            Use the <a class="text-link" href="/tools/piti-calculator/">PITI Calculator</a> to make
+            these four categories easier to compare side by side.
+          </p>
+
+          <h3>The mortgage payment formula</h3>
+          <p>
+            For a fixed-rate loan, principal and interest are commonly estimated with this formula:
+          </p>
+          <p class="formula">M = P x r(1 + r)^n / ((1 + r)^n - 1)</p>
+          <p>
+            In this formula, M is the monthly principal and interest payment, P is the loan amount, r is the monthly
+            interest rate, and n is the total number of monthly payments.
+          </p>
+
+          <h3>Worked example</h3>
+          <p>
+            Suppose a home costs $400,000 and the buyer makes an $80,000 down payment. The loan amount is $320,000.
+            With a 30-year term and a 6.5% interest rate, the estimated principal and interest payment is about
+            $2,023 per month. If yearly property taxes are $4,800 and yearly insurance is $1,200, the estimated total
+            monthly payment becomes about $2,523 before optional PMI, HOA dues, lender fees, and closing costs.
+          </p>
+
+          <h3>Factors that affect monthly payments</h3>
+          <p>
+            The largest drivers of monthly payment are home price, down payment, loan term, and interest rate.
+            Property tax rates, insurance premiums, PMI, HOA dues, and local rules can also change the total housing
+            cost. If you are still exploring budget ranges, the
+            <a class="text-link" href="/tools/affordability-calculator/">Affordability Calculator</a> can help connect monthly payment goals
+            with home price ranges.
+          </p>
+
+          <h3>Tips for reducing mortgage costs</h3>
+          <p>
+            A larger down payment, lower interest rate, shorter shopping list of fees, or careful comparison between
+            loan offers can reduce total borrowing costs. Refinancing may also help in some situations. Use the
+            <a class="text-link" href="/tools/refinance-calculator/">Refinance Calculator</a> for comparing
+            current and future loan scenarios.
+          </p>
+        </article>
+
+        <section class="content-panel youtube-panel">
+          <p class="eyebrow">Mortgage Basics for Beginners</p>
+          <h2>Learn the mortgage basics on YouTube.</h2>
+          <p>
+            Watch the Dicno Labs Mortgage Basics playlist for beginner-friendly lessons that explain the concepts
+            behind these calculators.
+          </p>
+          <div class="video-links">
+            <a class="text-link" href="https://www.youtube.com/watch?v=cvPEd-RN3k4&list=PLDgRU7UI0EVA" target="_blank" rel="noopener">Open playlist</a>
+            <a class="text-link" href="https://youtu.be/56PzvucdpJU?si=379YTBYyGOFoEXhW" target="_blank" rel="noopener">Video 1</a>
+            <a class="text-link" href="https://youtu.be/cvPEd-RN3k4?si=ozwtb4N_r8ewHQC2" target="_blank" rel="noopener">Video 2</a>
+            <a class="text-link" href="https://www.youtube.com/watch?v=P4ma5YJdjgY&list=PLDgRU7UI0EVA&index=3" target="_blank" rel="noopener">Video 3</a>
+          </div>
+        </section>
+
+        <section class="content-panel faq-panel" aria-labelledby="faq-title">
+          <h2 id="faq-title">Mortgage calculator FAQ</h2>
+          <h3>What does this mortgage calculator include?</h3>
+          <p>It includes principal and interest, estimated monthly property tax, estimated monthly insurance, PMI, and HOA dues.</p>
+
+          <h3>Is this a final loan quote?</h3>
+          <p>No. This is an educational estimate. Actual payments can vary based on lender fees, escrow rules, taxes, insurance, and loan terms.</p>
+
+          <h3>How is principal and interest calculated?</h3>
+          <p>The calculator uses the standard fixed-rate amortization formula based on loan amount, annual interest rate, and loan term.</p>
+
+          <h3>What is PMI?</h3>
+          <p>PMI stands for private mortgage insurance. It may apply when the down payment is below a lender's required threshold.</p>
+
+          <h3>Why are property taxes entered yearly?</h3>
+          <p>Property taxes are often quoted annually. The calculator divides the yearly tax amount by 12 to estimate the monthly cost.</p>
+
+          <h3>Why is home insurance entered yearly?</h3>
+          <p>Home insurance premiums are commonly planned annually. The calculator converts the yearly amount into a monthly estimate.</p>
+
+          <h3>Does the calculator include closing costs?</h3>
+          <p>No. Closing costs, lender fees, title fees, prepaid items, and other one-time expenses are not included in the monthly payment estimate.</p>
+
+          <h3>Can I compare different loan terms?</h3>
+          <p>Yes. Change the loan term field to compare a 15-year, 20-year, 30-year, or other fixed-rate scenario.</p>
+
+          <h3>How can I estimate affordability?</h3>
+          <p>Start with a monthly payment you are comfortable with, then adjust the home price, down payment, rate, taxes, and insurance. The <a class="text-link" href="/tools/affordability-calculator/">Affordability Calculator</a> can help with that planning step.</p>
+
+          <h3>When should I use a refinance calculator?</h3>
+          <p>A refinance calculator is useful when comparing your current loan with a new rate, new term, fees, and estimated break-even timing.</p>
+        </section>
+
+        <section class="play-cta mortgage-cta" aria-labelledby="mortgage-app-title">
+          <div>
+            <p class="eyebrow">HomeLoan Compass</p>
+            <h2 id="mortgage-app-title">Need more mortgage features?</h2>
+            <p>
+              Download HomeLoan Compass on Google Play for more complete mortgage planning tools, including an
+              Affordability Calculator, Loan Comparison, Amortization Schedule, Extra Payment Planning, and future
+              premium tools designed for deeper home loan analysis.
+            </p>
+          </div>
+          <a class="button primary" href="https://play.google.com/store/apps/details?id=com.homeloancompass.app" target="_blank" rel="noopener">
+            Download on Google Play
+          </a>
+        </section>
+
+        <section class="related-section" aria-labelledby="related-title">
+          <div class="section-heading split">
+            <div>
+              <p class="eyebrow">Related articles</p>
+              <h2 id="related-title">More mortgage guides coming soon.</h2>
+            </div>
+            <a class="text-link" href="/blog/">Visit the blog</a>
+          </div>
+          <div class="card-grid three">
+            <article class="glass-card compact-card">
+              <span class="badge">Coming soon</span>
+              <h3>How much house can I afford?</h3>
+              <p>A practical guide to income, debts, down payment, and monthly payment comfort.</p>
+            </article>
+            <article class="glass-card compact-card">
+              <span class="badge">Coming soon</span>
+              <h3>Understanding PITI</h3>
+              <p>A plain-language breakdown of principal, interest, taxes, and insurance.</p>
+            </article>
+            <article class="glass-card compact-card">
+              <span class="badge">Coming soon</span>
+              <h3>When refinancing may make sense</h3>
+              <p>How to think about rate changes, fees, break-even timing, and loan terms.</p>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer class="site-footer"><p>Dicno Labs</p><nav aria-label="Footer"><a href="/apps/">Apps</a><a href="/tools/">Tools</a><a href="/learn/">Learn</a><a href="/blog/">Blog</a><a href="/developer/">Developer</a><a href="/privacy-policy/">Privacy Policy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a><a href="https://www.youtube.com/@DicnoLabs/videos" target="_blank" rel="noopener">YouTube</a><a href="mailto:support@dicnolabs.com">Email</a></nav><p>&copy; <span data-year></span> Dicno Labs. All rights reserved.</p></footer>
+    <script src="/script.js" defer></script>
+  </body>
+</html>
