@@ -40,6 +40,31 @@ if (nav && navToggle) {
   });
 }
 
+const lessonToc = document.querySelector(".lesson-toc");
+
+if (lessonToc) {
+  const tocLinks = [...lessonToc.querySelectorAll("a[href^='#']")];
+  const tocSections = tocLinks
+    .map((link) => document.getElementById(link.getAttribute("href").slice(1)))
+    .filter(Boolean);
+
+  const setActiveTocLink = () => {
+    let current = tocSections[0];
+    tocSections.forEach((section) => {
+      if (section.getBoundingClientRect().top <= 150) {
+        current = section;
+      }
+    });
+
+    tocLinks.forEach((link) => {
+      link.classList.toggle("active", current && link.getAttribute("href") === `#${current.id}`);
+    });
+  };
+
+  setActiveTocLink();
+  window.addEventListener("scroll", setActiveTocLink, { passive: true });
+}
+
 const mortgageForm = document.querySelector("[data-mortgage-calculator]");
 
 const money = new Intl.NumberFormat("en-US", {
