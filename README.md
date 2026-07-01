@@ -12,7 +12,7 @@ A static content website for Dicno Labs, built with HTML, CSS, and JavaScript on
 - `developer/index.html` - Original developer profile style page
 - `apps/index.html` - Apps index
 - `apps/homeloan-compass/index.html` - HomeLoan Compass app page
-- `tools/index.html` - Financial tools index
+- `tools/index.html` - SEO tools directory
 - `blog/index.html` - Blog index
 - `privacy-policy/index.html` - Privacy Policy
 - `terms/index.html` - Terms of Service
@@ -22,6 +22,58 @@ A static content website for Dicno Labs, built with HTML, CSS, and JavaScript on
 - `style.css` - Responsive visual design and layout
 - `script.js` - Header state, mobile navigation, and copyright year
 - `assets/` - Brand images
+
+## SEO Tools QA Report
+
+Last QA pass: July 1, 2026.
+
+### Tools Added
+
+The tools directory now includes active finance, text, developer, image, education, and health tools. Priority tools verified:
+
+- Mortgage Calculator
+- PITI Calculator
+- Home Affordability Calculator
+- Refinance Calculator
+- Word Counter
+- Character Counter
+- Password Generator
+- JSON Formatter
+- Base64 Encoder
+- UUID Generator
+- Timestamp Converter
+- BMI Calculator
+- Age Calculator
+- Date Calculator
+- QR Code Generator
+
+Additional active tools currently present include Loan Calculator, Savings Calculator, GPA Calculator, Study Time Calculator, Extra Payment Calculator, and Amortization Calculator.
+
+### Routes Verified
+
+Local static-server QA returned HTTP 200 for `/`, `/tools/`, all tool routes, `/contact/`, `/privacy-policy/`, `/terms/`, `/ads.txt`, and `/app-ads.txt`.
+
+Priority tool pages were checked for:
+
+- Working rendered result areas with no browser console errors
+- One H1 per page
+- SEO title, meta description, canonical URL, Open Graph tags, and Twitter Card tags
+- Breadcrumb, WebApplication, and FAQ JSON-LD schema
+- Related tools and related articles links
+- Mobile layout at 390px width with no horizontal overflow
+
+### Known Limitations
+
+- Copy buttons and reset buttons are not currently part of the tool UI, so no copy/reset behavior was tested.
+- `/tools/refinancing-calculator/` remains as a legacy reachable alias, but the active linked and canonical route is `/tools/refinance-calculator/`.
+
+### Deployment Checklist
+
+1. Keep `ads.txt` and `app-ads.txt` in the project root.
+2. Confirm both advertising files contain the Google publisher record before deployment.
+3. Deploy the root folder to GitHub Pages.
+4. After deployment, verify `https://dicnolabs.com/tools/`, `https://dicnolabs.com/ads.txt`, and `https://dicnolabs.com/app-ads.txt`.
+5. Spot-check priority tool pages on mobile and desktop.
 
 ## Markdown Articles
 
