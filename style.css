@@ -862,6 +862,10 @@ h3 {
     padding: 13px 14px;
   }
 
+  .site-nav .nav-legal {
+    display: none;
+  }
+
   .nav-toggle[aria-expanded="true"] span:first-child {
     transform: translateY(5px) rotate(45deg);
   }
@@ -903,6 +907,55 @@ h3 {
   .site-footer {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page .section {
+    width: min(calc(100% - 28px), var(--max));
+    padding: 54px 0;
+  }
+
+  .home-page .mission {
+    width: min(calc(100% - 28px), var(--max));
+    margin-top: 54px;
+    margin-bottom: 54px;
+  }
+
+  .home-page .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .home-page .section h2,
+  .home-page .mission h2 {
+    font-size: clamp(1.875rem, 8vw, 2.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.026em;
+  }
+
+  .home-page .section-heading.split {
+    gap: 16px;
+  }
+
+  .home-page .card-grid {
+    gap: 16px;
+  }
+
+  .home-page .glass-card {
+    min-height: 164px;
+    padding: 24px;
+  }
+
+  .home-page .compact-card {
+    min-height: 148px;
+  }
+
+  .home-page .tool-card {
+    min-height: 190px;
+  }
+
+  .home-page .card-line {
+    margin-bottom: 34px;
   }
 }
 
@@ -958,6 +1011,16 @@ h3 {
 
   .card-line {
     margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 420px) {
+  .home-page .section {
+    width: min(calc(100% - 24px), var(--max));
+  }
+
+  .home-page .mission {
+    width: min(calc(100% - 24px), var(--max));
   }
 }
 
